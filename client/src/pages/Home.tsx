@@ -102,8 +102,8 @@ export default function Home() {
             <div className="absolute -inset-6 bg-secondary/10 rounded-[3rem] blur-3xl animate-pulse"></div>
             <div className="relative overflow-hidden rounded-[2.5rem] shadow-2xl border border-white/10 group-hover:translate-y-[-10px] transition-transform duration-500">
               <img
-                src="/images/montagem-acabamento.jpg"
-                alt="CLMA Montagem e Acabamento"
+                src="/images/project-1.jpg"
+                alt="CLMA Projeto Real"
                 className="w-full h-[550px] object-cover scale-105 group-hover:scale-100 transition-transform duration-700"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary/90 to-transparent p-10">
