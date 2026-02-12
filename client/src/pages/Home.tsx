@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Phone, MapPin, Clock, ArrowRight, Building2, Hammer, PaintBucket } from "lucide-react";
 
 /**
@@ -177,24 +178,44 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Portfolio Highlight */}
-      <section id="projetos" className="py-24 md:py-32 bg-slate-50 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-32 bg-background" style={{
-          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 0)"
-        }}></div>
-
-        <div className="container pt-12">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
-            <div className="space-y-4">
-              <span className="text-secondary font-black text-xs uppercase tracking-widest bg-secondary/10 px-4 py-2 rounded-full">Portfólio 2024</span>
-              <h2 className="text-4xl md:text-6xl font-black text-primary tracking-tighter">
-                Projetos <span className="text-secondary italic">Assinados</span>
-              </h2>
+      {/* Portfolio Section */}
+      <section id="portfolio" className="py-24 bg-white relative overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div className="max-w-2xl">
+              <h2 className="text-4xl md:text-5xl font-black text-primary leading-tight mb-4 tracking-tighter">O QUE NOS MOVE</h2>
+              <p className="text-lg text-slate-600 font-medium">Transformamos desafios técnicos em resultados de excelência, com rigor e compromisso.</p>
             </div>
-            <button className="bg-primary text-white px-8 py-4 rounded-xl font-bold flex items-center gap-3 hover:bg-primary/90 transition-all shadow-lg active:scale-95 group">
-              VER GALERIA COMPLETA
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-6 rounded-full text-lg font-black tracking-tight shadow-xl hover:shadow-2xl transition-all flex items-center gap-3">
+                  VER GALERIA COMPLETA <ArrowRight className="w-6 h-6" />
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-5xl h-[80vh] overflow-y-auto bg-white/95 backdrop-blur-md border-none shadow-2xl">
+                <DialogHeader>
+                  <DialogTitle className="text-3xl font-black text-primary tracking-tighter mb-8">Nossos Projetos & Obras</DialogTitle>
+                </DialogHeader>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-2">
+                  {[
+                    "project-1.jpg", "project-2.jpg", "project-3.jpg", "project-4.jpg",
+                    "montagem-acabamento.jpg", "team-construction.jpg", "hero-construction.jpg",
+                    "work-site-1.jpg", "work-site-2.jpg"
+                  ].map((img, i) => (
+                    <div key={i} className="group relative aspect-video rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all cursor-zoom-in">
+                      <img
+                        src={`/images/${img}`}
+                        alt="Project detail"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span className="text-white font-bold text-sm bg-primary/40 px-4 py-2 rounded-full backdrop-blur-sm border border-white/20">Expandir Imagem</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-12">
