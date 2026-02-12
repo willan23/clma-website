@@ -156,7 +156,7 @@ export default function Home() {
                 items: ["Portas e Janelas", "Armários em Pladur", "Prateleiras", "Balcões"]
               }
             ].map((service, idx) => (
-              <Card key={idx} className="group p-12 hover:shadow-2xl transition-all duration-500 border-none bg-slate-50 relative overflow-hidden flex flex-col items-center text-center">
+              <Card key={idx} className="group p-12 hover:shadow-2xl transition-all duration-500 border-none bg-[#F0F7FF] relative overflow-hidden flex flex-col items-center text-center">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-primary/5 -mr-20 -mt-20 rounded-full group-hover:bg-primary/10 transition-colors"></div>
                 <div className="w-20 h-20 bg-white rounded-2xl shadow-xl shadow-primary/5 flex items-center justify-center mb-10 relative z-10 group-hover:scale-110 transition-transform">
                   <service.icon className="w-10 h-10 text-secondary" />
