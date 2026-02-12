@@ -1,7 +1,6 @@
 {
     "version": 2,
-    "framework": "vite",
-    "buildCommand": "pnpm build",
+    "buildCommand": "npm run vercel-build",
     "outputDirectory": "dist/public",
     "rewrites": [
         {
