@@ -137,22 +137,22 @@ export default function Home() {
           <div className="grid lg:grid-cols-3 gap-12">
             {[
               {
-                icon: Building2,
-                title: "Construção Civil",
-                desc: "Solidez desde a fundação ao teto, com as melhores práticas de engenharia.",
-                items: ["Estruturas de betão", "Alvenaria técnica", "Licenciamento"]
-              },
-              {
                 icon: Hammer,
-                title: "Montagem",
-                desc: "Especialistas em montagens de precisão para sistemas elétricos e metálicos.",
-                items: ["Estruturas metálicas", "Redes hidráulicas", "Sistemas AVAC"]
+                title: "Montagem & Instalação",
+                desc: "Soluções precisas de montagem técnica para diversos fins.",
+                items: ["Raker com painéis luminosos", "Mobiliário", "Teto Falso", "Espelhos"]
               },
               {
                 icon: PaintBucket,
-                title: "Acabamento",
-                desc: "O toque final que define a identidade do espaço com materiais premium.",
-                items: ["Revestimento cerâmico", "Pintura técnica", "Gesso cartonado"]
+                title: "Acabamentos & Revestimentos",
+                desc: "O toque final de estética e elegância no seu projeto.",
+                items: ["Papel de Parede", "Ripados", "Vinil Autocolante", "Molduras Bousery"]
+              },
+              {
+                icon: Building2,
+                title: "Fabricação Sob Medida",
+                desc: "Estruturas personalizadas criadas especificamente para o seu espaço.",
+                items: ["Portas e Janelas", "Armários em Pladur", "Prateleiras", "Balcões"]
               }
             ].map((service, idx) => (
               <Card key={idx} className="group p-12 hover:shadow-2xl transition-all duration-500 border-none bg-slate-50 relative overflow-hidden flex flex-col items-center text-center">
@@ -257,7 +257,7 @@ export default function Home() {
                   className="w-full h-full object-cover"
                   autoPlay
                   loop
-                  muted
+                  controls
                   playsInline
                 />
                 <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors"></div>
@@ -271,7 +271,7 @@ export default function Home() {
                   className="w-full h-full object-cover"
                   autoPlay
                   loop
-                  muted
+                  controls
                   playsInline
                 />
                 <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors"></div>
@@ -364,7 +364,7 @@ export default function Home() {
             </a>
             <div className="text-left text-white/60">
               <p className="text-xs font-bold uppercase tracking-widest mb-1">Linha Direta Luanda</p>
-              <p className="text-2xl font-black text-white">{whatsappNumber}</p>
+              <p className="text-2xl font-black text-white px-2 py-1 bg-white/10 rounded-lg backdrop-blur-sm border border-white/10">CLMA Construção</p>
             </div>
           </div>
         </div>
