@@ -105,9 +105,12 @@ export default function Home() {
                 SOLICITAR ORÇAMENTO
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
-              <button className="border-2 border-white/20 bg-white/5 backdrop-blur-sm text-white hover:bg-white hover:text-primary px-10 py-5 rounded-xl font-black transition-all duration-300 uppercase text-sm tracking-tighter">
+              <a
+                href="#projetos"
+                className="border-2 border-white/20 bg-white/5 backdrop-blur-sm text-white hover:bg-white hover:text-primary px-10 py-5 rounded-xl font-black transition-all duration-300 uppercase text-sm tracking-tighter flex items-center justify-center"
+              >
                 Portfólio Completo
-              </button>
+              </a>
             </div>
           </div>
 
@@ -115,7 +118,7 @@ export default function Home() {
             <div className="absolute -inset-6 bg-secondary/10 rounded-[3rem] blur-3xl animate-pulse"></div>
             <div className="relative overflow-hidden rounded-[2.5rem] shadow-2xl border border-white/10 group-hover:translate-y-[-10px] transition-transform duration-500">
               <img
-                src="/images/project-1.jpg"
+                src="/images/clma-ess.jpg"
                 alt="CLMA Projeto Real"
                 className="w-full h-[550px] object-cover scale-105 group-hover:scale-100 transition-transform duration-700"
               />
@@ -355,7 +358,7 @@ export default function Home() {
             <div className="relative">
               <div className="grid grid-cols-2 gap-6 relative z-10">
                 <div className="space-y-6">
-                  <img src="/images/new-collage.jpg" className="w-full h-80 object-cover rounded-[2rem] shadow-lg border-4 border-white" alt="On site collage" />
+                  <img src="/images/clma-essa.jpg" className="w-full h-80 object-cover rounded-[2rem] shadow-lg border-4 border-white" alt="Ripado e Acabamento" />
                   <div className="bg-secondary p-10 rounded-[2rem] text-white shadow-xl">
                     <p className="text-5xl font-black font-mono tracking-tighter">15+</p>
                     <p className="text-xs font-bold uppercase tracking-widest mt-3 opacity-90">Anos de Experiência</p>
@@ -366,7 +369,7 @@ export default function Home() {
                     <p className="text-5xl font-black font-mono tracking-tighter">150+</p>
                     <p className="text-xs font-bold uppercase tracking-widest mt-3 opacity-90">Obras Concluídas</p>
                   </div>
-                  <img src="/images/new-project-2.jpg" className="w-full h-80 object-cover rounded-[2rem] shadow-lg border-4 border-white" alt="Team" />
+                  <img src="/images/clma-essee.jpg" className="w-full h-80 object-cover rounded-[2rem] shadow-lg border-4 border-white" alt="Obra Pladur" />
                 </div>
               </div>
               {/* Abstract element */}
