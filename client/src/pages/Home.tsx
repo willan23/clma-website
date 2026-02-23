@@ -138,51 +138,64 @@ export default function Home() {
         <div className="container">
           <div className="text-center mb-24">
             <h2 className="text-4xl md:text-6xl font-black text-primary mb-8 tracking-tighter">
-              O Que <span className="text-secondary">Fazemos</span>
+              Nossas <span className="text-secondary">Especialidades</span>
             </h2>
             <div className="w-40 h-2 bg-secondary/20 mx-auto mb-8 rounded-full flex justify-center">
               <div className="w-16 h-full bg-secondary rounded-full"></div>
             </div>
             <p className="text-muted-foreground max-w-3xl mx-auto text-xl leading-relaxed">
-              Três pilares fundamentais para transformar sua visão em realidade estrutural.
+              Inovação, Experiência e Precisão em Cada Detalhe.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-12">
             {[
               {
-                icon: Hammer,
-                title: "Montagem & Instalação",
-                desc: "Soluções precisas de montagem técnica para diversos fins.",
-                items: ["Raker com painéis luminosos", "Mobiliário", "Teto Falso", "Espelhos"]
+                icon: PaintBucket,
+                title: "1. Design de Interiores e Revestimentos",
+                desc: "Sofisticação e acabamento impecável para transformar suas paredes.",
+                details: [
+                  { t: "Ripados e Molduras Boiserie", d: "Aplicação de todos os tipos de ripados e molduras clássicas/modernas." },
+                  { t: "Papel de Parede e Vinis", d: "Instalação técnica de padrões e vinis autocolantes premium." },
+                  { t: "Painéis Luminosos", d: "Criação de Rakers com iluminação integrada para ambientes cênicos." }
+                ]
               },
               {
-                icon: PaintBucket,
-                title: "Acabamentos & Revestimentos",
-                desc: "O toque final de estética e elegância no seu projeto.",
-                items: ["Papel de Parede", "Ripados", "Vinil Autocolante", "Molduras Bousery"]
+                icon: Hammer,
+                title: "2. Soluções em Pladur e Carpintaria",
+                desc: "Estruturas sob medida utilizando as melhores técnicas de gesso cartonado.",
+                details: [
+                  { t: "Mobiliário em Pladur", d: "Fabricação de armários, prateleiras e balcões personalizados." },
+                  { t: "Tetos Falsos", d: "Montagem técnica com isolamento e suporte para iluminação." },
+                  { t: "Caixilharia", d: "Fabricação e montagem de portas e janelas de alta funcionalidade." }
+                ]
               },
               {
                 icon: Building2,
-                title: "Fabricação Sob Medida",
-                desc: "Estruturas personalizadas criadas especificamente para o seu espaço.",
-                items: ["Portas e Janelas", "Armários em Pladur", "Prateleiras", "Balcões"]
+                title: "3. Montagem e Finalização",
+                desc: "O cuidado minucioso em cada junção, corte e fixação do seu mobiliário.",
+                details: [
+                  { t: "Mobiliário e Espelhos", d: "Montagem profissional e segura de mobiliários e espelhos." },
+                  { t: "Acabamentos Gerais", d: "Cuidado absoluto em cada detalhe de finalização e fixação." },
+                  { t: "Espaços Prontos", d: "Entrega de ambientes prontos a habitar com rigor técnico." }
+                ]
               }
             ].map((service, idx) => (
-              <Card key={idx} className="group p-12 hover:shadow-2xl transition-all duration-500 border-none bg-[#F0F7FF] relative overflow-hidden flex flex-col items-center text-center">
-                <div className="absolute top-0 right-0 w-40 h-40 bg-primary/5 -mr-20 -mt-20 rounded-full group-hover:bg-primary/10 transition-colors"></div>
-                <div className="w-20 h-20 bg-white rounded-2xl shadow-xl shadow-primary/5 flex items-center justify-center mb-10 relative z-10 group-hover:scale-110 transition-transform">
-                  <service.icon className="w-10 h-10 text-secondary" />
+              <Card key={idx} className="group p-10 hover:shadow-2xl transition-all duration-500 border-none bg-[#F0F7FF] relative overflow-hidden flex flex-col h-full">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 -mr-16 -mt-16 rounded-full group-hover:bg-primary/10 transition-colors"></div>
+                <div className="w-16 h-16 bg-white rounded-2xl shadow-xl shadow-primary/5 flex items-center justify-center mb-8 relative z-10 group-hover:scale-110 transition-transform">
+                  <service.icon className="w-8 h-8 text-secondary" />
                 </div>
-                <h3 className="text-2xl font-black text-primary mb-5 relative z-10">{service.title}</h3>
-                <p className="text-muted-foreground mb-10 text-lg relative z-10 leading-relaxed">
+                <h3 className="text-2xl font-black text-primary mb-4 relative z-10 leading-tight">{service.title}</h3>
+                <p className="text-muted-foreground mb-8 text-base relative z-10 font-medium">
                   {service.desc}
                 </p>
-                <div className="flex flex-wrap justify-center gap-3 relative z-10 mt-auto">
-                  {service.items.map((item, i) => (
-                    <span key={i} className="bg-white border border-border px-4 py-1.5 rounded-full text-xs font-bold text-primary uppercase shadow-sm">
-                      {item}
-                    </span>
+                <div className="space-y-4 relative z-10 mt-auto">
+                  {service.details.map((detail, i) => (
+                    <div key={i} className="bg-white/50 backdrop-blur-sm p-4 rounded-xl border border-white/50 hover:bg-white transition-colors duration-300">
+                      <p className="text-xs font-black text-primary uppercase mb-1">{detail.t}</p>
+                      <p className="text-[11px] text-muted-foreground leading-relaxed">{detail.d}</p>
+                    </div>
                   ))}
                 </div>
               </Card>
@@ -196,8 +209,8 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div className="max-w-2xl">
-              <h2 className="text-4xl md:text-5xl font-black text-primary leading-tight mb-4 tracking-tighter">O QUE NOS MOVE</h2>
-              <p className="text-lg text-slate-600 font-medium">Transformamos desafios técnicos em resultados de excelência, com rigor e compromisso.</p>
+              <h2 className="text-4xl md:text-5xl font-black text-primary leading-tight mb-4 tracking-tighter">Nosso Portfólio</h2>
+              <p className="text-lg text-slate-600 font-medium">Não apenas executamos serviços; transformamos visões em realidade com técnica apurada e design moderno.</p>
             </div>
             <Dialog>
               <DialogTrigger asChild>
@@ -362,39 +375,41 @@ export default function Home() {
 
             <div className="space-y-10">
               <div className="space-y-6">
-                <span className="text-secondary font-black text-xs uppercase tracking-[0.3em]">Nossa História</span>
+                <span className="text-secondary font-black text-xs uppercase tracking-[0.3em]">👤 Quem Somos</span>
                 <h2 className="text-4xl md:text-6xl font-black text-primary leading-tight tracking-tighter">
-                  A Força de uma <span className="text-secondary">Visão</span>
+                  🏗️ CLMA – <span className="text-secondary">Construção Limitada</span>
                 </h2>
                 <div className="space-y-4">
                   <p className="text-xl text-muted-foreground leading-relaxed">
-                    A CLMA Construção não é apenas uma empresa; é o testemunho vivo de um jovem angolano que, com garra e determinação, ergueu uma marca do zero para elevar o padrão da construção civil em Angola.
+                    A CLMA é formada por um grupo de jovens empreendedores que decidiram unir a energia da nova geração com a solidez de mais de 15 anos de experiência no setor da construção e acabamentos.
                   </p>
-                  <p className="text-lg text-muted-foreground leading-relaxed italic border-l-4 border-secondary pl-6 py-2">
-                    "Minha missão é provar que a juventude angolana tem competência, rigor e visão. Cada obra concluída é um passo na consolidação de um sonho que gera emprego e transforma espaços."
-                  </p>
-                  <p className="text-base text-muted-foreground leading-relaxed">
-                    Com foco total no cliente e na qualidade técnica, lutamos diariamente para que a CLMA seja sinónimo de confiança e excelência em acabamentos e montagens técnicas em todo o país.
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    Nosso objetivo fundamental é fazer a diferença no mercado, entregando projetos que combinam técnica apurada, design moderno e um compromisso inabalável com a qualidade. Não apenas executamos serviços; transformamos visões em realidade.
                   </p>
                 </div>
               </div>
 
-              <div className="space-y-6">
-                {[
-                  { t: "Rigor Técnico", d: "Seguimos normas internacionais em cada viga lançada." },
-                  { t: "Gestão de Prazos", d: "Cronograma é compromisso sagrado para nossa equipe." },
-                  { t: "Materiais Certificados", d: "Trabalhamos apenas com o que há de melhor no mercado." }
-                ].map((item, i) => (
-                  <div key={i} className="flex gap-6 items-start">
-                    <div className="flex-shrink-0 w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center">
-                      <ArrowRight className="w-6 h-6 text-secondary" />
+              <div className="space-y-8">
+                <h3 className="text-2xl font-black text-primary flex items-center gap-3">
+                  <span className="text-secondary">💡</span> Por que escolher a CLMA?
+                </h3>
+                <div className="grid gap-6">
+                  {[
+                    { t: "Equipa Jovem e Dinâmica", d: "Proatividade para resolver desafios e acompanhar as últimas tendências de design." },
+                    { t: "Bagagem Técnica", d: "Mais de 15 anos de 'know-how' garantem que o seu projeto está em mãos seguras." },
+                    { t: "Compromisso com o Prazo", d: "Respeitamos o seu tempo tanto quanto respeitamos a qualidade do nosso trabalho." }
+                  ].map((item, i) => (
+                    <div key={i} className="flex gap-6 items-start bg-slate-50 p-6 rounded-2xl hover:shadow-lg transition-all group">
+                      <div className="w-12 h-12 bg-white rounded-xl shadow-md flex items-center justify-center flex-shrink-0 group-hover:bg-secondary group-hover:text-white transition-colors">
+                        <CheckCircle2 className="w-6 h-6" />
+                      </div>
+                      <div className="space-y-1">
+                        <h4 className="font-black text-primary uppercase text-xs tracking-widest">{item.t}</h4>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{item.d}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-black text-primary uppercase text-sm tracking-widest mb-1">{item.t}</h4>
-                      <p className="text-muted-foreground">{item.d}</p>
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>
