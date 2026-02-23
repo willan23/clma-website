@@ -211,9 +211,10 @@ export default function Home() {
                 </DialogHeader>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-2">
                   {[
-                    "project-1.jpg", "project-2.jpg", "project-3.jpg", "project-4.jpg",
-                    "montagem-acabamento.jpg", "team-construction.jpg", "hero-construction.jpg",
-                    "work-site-1.jpg", "work-site-2.jpg"
+                    "clma-ess.jpg", "clma-essee.jpg", "clma-essa.jpg", "clma-esse.jpg",
+                    "clma-esa.jpg", "clma-ese.jpg", "clma-wee.jpg", "clma-add.jpg",
+                    "clma-edddd.jpg", "clma-desse.jpg", "clma-ase.jpg", "clma-asse.jpg",
+                    "new-project-1.jpg", "new-project-2.jpg", "project-3.jpg"
                   ].map((img, i) => (
                     <div key={i} className="group relative aspect-video rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all cursor-zoom-in">
                       <img
@@ -233,22 +234,41 @@ export default function Home() {
 
           <div className="grid lg:grid-cols-3 gap-12">
             {[
-              { img: "new-project-1.jpg", tag: "REFORMA LUXO", city: "Luanda", title: "Acabamentos Premium" },
-              { img: "new-project-2.jpg", tag: "ESTRUTURAL", city: "Talatona", title: "Montagem de Precisão" },
-              { img: "project-3.jpg", tag: "INDUSTRIAL", city: "Viana", title: "Galpão Logístico" }
+              {
+                img: "clma-ess.jpg",
+                tag: "ACABAMENTO TÉCNICO",
+                city: "Luanda",
+                title: "Rigor no Detalhe",
+                desc: "Acompanhamento direto do fundador em cada etapa, garantindo que a visão do cliente seja executada com a precisão que só quem luta pela sua marca pode oferecer."
+              },
+              {
+                img: "clma-essee.jpg",
+                tag: "DESIGN INTERIOR",
+                city: "Talatona",
+                title: "Mobiliário Arrojado",
+                desc: "Criação de nichos e estantes em pladur com acabamento premium, transformando paredes simples em elementos de design sofisticado e funcional."
+              },
+              {
+                img: "clma-essa.jpg",
+                tag: "REVESTIMENTO",
+                city: "Viana",
+                title: "Inovação Estética",
+                desc: "Aplicação de ripados e painéis decorativos que aliam a modernidade industrial à elegância residencial, refletindo a garra de uma empresa que não para de crescer."
+              }
             ].map((proj, i) => (
               <div key={i} className="group cursor-pointer">
-                <div className="relative h-[450px] overflow-hidden rounded-[2rem] shadow-xl">
+                <div className="relative h-[480px] overflow-hidden rounded-[2rem] shadow-xl">
                   <img
                     src={`/images/${proj.img}`}
                     alt={proj.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-60 group-hover:opacity-90 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
                   <div className="absolute bottom-0 left-0 p-8 text-white">
                     <span className="text-[10px] font-black tracking-widest text-secondary mb-3 block uppercase bg-white/10 backdrop-blur-md w-fit px-3 py-1 rounded-sm">{proj.tag}</span>
-                    <h3 className="text-2xl font-black mb-1">{proj.title}</h3>
-                    <p className="flex items-center gap-2 text-blue-100/80 text-sm font-medium">
+                    <h3 className="text-2xl font-black mb-2">{proj.title}</h3>
+                    <p className="text-xs text-blue-100/70 mb-4 line-clamp-3 leading-relaxed">{proj.desc}</p>
+                    <p className="flex items-center gap-2 text-blue-100 font-bold text-xs">
                       <MapPin className="w-3 h-3 text-secondary" />
                       {proj.city}
                     </p>
@@ -342,13 +362,21 @@ export default function Home() {
 
             <div className="space-y-10">
               <div className="space-y-6">
-                <span className="text-secondary font-black text-xs uppercase tracking-[0.3em]">Quem Somos</span>
+                <span className="text-secondary font-black text-xs uppercase tracking-[0.3em]">Nossa História</span>
                 <h2 className="text-4xl md:text-6xl font-black text-primary leading-tight tracking-tighter">
-                  Sua Visão, Nossa <span className="text-secondary">Estrutura</span>
+                  A Força de uma <span className="text-secondary">Visão</span>
                 </h2>
-                <p className="text-xl text-muted-foreground leading-relaxed">
-                  A CLMA nasceu do desejo de elevar o padrão construtivo em Angola. Hoje, somos referência em projetos que exigem simultaneamente solidez técnica e acabamentos de alto luxo.
-                </p>
+                <div className="space-y-4">
+                  <p className="text-xl text-muted-foreground leading-relaxed">
+                    A CLMA Construção não é apenas uma empresa; é o testemunho vivo de um jovem angolano que, com garra e determinação, ergueu uma marca do zero para elevar o padrão da construção civil em Angola.
+                  </p>
+                  <p className="text-lg text-muted-foreground leading-relaxed italic border-l-4 border-secondary pl-6 py-2">
+                    "Minha missão é provar que a juventude angolana tem competência, rigor e visão. Cada obra concluída é um passo na consolidação de um sonho que gera emprego e transforma espaços."
+                  </p>
+                  <p className="text-base text-muted-foreground leading-relaxed">
+                    Com foco total no cliente e na qualidade técnica, lutamos diariamente para que a CLMA seja sinónimo de confiança e excelência em acabamentos e montagens técnicas em todo o país.
+                  </p>
+                </div>
               </div>
 
               <div className="space-y-6">
