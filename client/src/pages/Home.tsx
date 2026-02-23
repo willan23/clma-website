@@ -2,7 +2,8 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Phone, MapPin, Clock, ArrowRight, Building2, Hammer, PaintBucket } from "lucide-react";
+import { Phone, MapPin, Clock, ArrowRight, Building2, Hammer, PaintBucket, CheckCircle2 } from "lucide-react";
+import { motion } from "framer-motion";
 
 /**
  * CLMA Website - Home Page
@@ -12,7 +13,8 @@ import { Phone, MapPin, Clock, ArrowRight, Building2, Hammer, PaintBucket } from
  */
 
 export default function Home() {
-  const whatsappNumber = "+244928594960";
+  const phoneContact = "+244 952 450 874";
+  const whatsappNumber = "+244 938 667 695";
   const whatsappLink = `https://wa.me/${whatsappNumber.replace(/\D/g, "")}?text=Olá%20CLMA,%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços`;
 
   return (
@@ -47,15 +49,21 @@ export default function Home() {
             </a>
           </nav>
 
-          <a
-            href={whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-secondary hover:bg-secondary/90 text-white px-6 py-2.5 rounded-full font-bold transition-all duration-300 flex items-center gap-2 text-sm shadow-md hover:shadow-lg active:scale-95"
-          >
-            <Phone className="w-4 h-4" />
-            <span>WhatsApp</span>
-          </a>
+          <div className="hidden sm:flex items-center gap-4">
+            <div className="text-right hidden lg:block">
+              <p className="text-[10px] text-muted-foreground uppercase font-bold">Ligue agora</p>
+              <p className="text-sm font-black text-primary">{phoneContact}</p>
+            </div>
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-secondary hover:bg-secondary/90 text-white px-6 py-2.5 rounded-full font-bold transition-all duration-300 flex items-center gap-2 text-sm shadow-md hover:shadow-lg active:scale-95"
+            >
+              <Phone className="w-4 h-4" />
+              <span>WhatsApp</span>
+            </a>
+          </div>
         </div>
       </header>
 
@@ -70,7 +78,12 @@ export default function Home() {
 
         <div className="container grid md:grid-cols-2 gap-16 items-center relative z-10">
           <div className="space-y-8">
-            <div className="space-y-4">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="space-y-4"
+            >
               <div className="inline-block bg-secondary/20 text-secondary border border-secondary/30 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest">
                 Referência em Angola
               </div>
@@ -80,7 +93,7 @@ export default function Home() {
               <p className="text-xl text-blue-100/80 max-w-lg leading-relaxed font-light">
                 Soluções integradas de construção, montagem e acabamento para projetos que exigem o mais alto padrão de qualidade.
               </p>
-            </div>
+            </motion.div>
 
             <div className="flex flex-col sm:flex-row gap-5 pt-4">
               <a
@@ -179,7 +192,7 @@ export default function Home() {
       </section>
 
       {/* Portfolio Section */}
-      <section id="portfolio" className="py-24 bg-white relative overflow-hidden">
+      <section id="projetos" className="py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div className="max-w-2xl">
@@ -220,8 +233,8 @@ export default function Home() {
 
           <div className="grid lg:grid-cols-3 gap-12">
             {[
-              { img: "project-1.jpg", tag: "REFORMA LUXO", city: "Luanda", title: "Acabamentos Premium" },
-              { img: "project-2.jpg", tag: "ESTRUTURAL", city: "Talatona", title: "Montagem de Precisão" },
+              { img: "new-project-1.jpg", tag: "REFORMA LUXO", city: "Luanda", title: "Acabamentos Premium" },
+              { img: "new-project-2.jpg", tag: "ESTRUTURAL", city: "Talatona", title: "Montagem de Precisão" },
               { img: "project-3.jpg", tag: "INDUSTRIAL", city: "Viana", title: "Galpão Logístico" }
             ].map((proj, i) => (
               <div key={i} className="group cursor-pointer">
@@ -309,18 +322,18 @@ export default function Home() {
             <div className="relative">
               <div className="grid grid-cols-2 gap-6 relative z-10">
                 <div className="space-y-6">
-                  <img src="/images/work-site-1.jpg" className="w-full h-80 object-cover rounded-[2rem] shadow-lg" alt="On site" />
+                  <img src="/images/new-collage.jpg" className="w-full h-80 object-cover rounded-[2rem] shadow-lg border-4 border-white" alt="On site collage" />
                   <div className="bg-secondary p-10 rounded-[2rem] text-white shadow-xl">
-                    <p className="text-4xl font-black">15+</p>
-                    <p className="text-sm font-bold uppercase tracking-widest mt-2">Anos de Experiência</p>
+                    <p className="text-5xl font-black font-mono tracking-tighter">15+</p>
+                    <p className="text-xs font-bold uppercase tracking-widest mt-3 opacity-90">Anos de Experiência</p>
                   </div>
                 </div>
                 <div className="space-y-6 pt-16">
                   <div className="bg-primary p-10 rounded-[2rem] text-white shadow-xl">
-                    <p className="text-4xl font-black">150+</p>
-                    <p className="text-sm font-bold uppercase tracking-widest mt-2">Obras Concluídas</p>
+                    <p className="text-5xl font-black font-mono tracking-tighter">150+</p>
+                    <p className="text-xs font-bold uppercase tracking-widest mt-3 opacity-90">Obras Concluídas</p>
                   </div>
-                  <img src="/images/work-site-2.jpg" className="w-full h-80 object-cover rounded-[2rem] shadow-lg" alt="Team" />
+                  <img src="/images/new-project-2.jpg" className="w-full h-80 object-cover rounded-[2rem] shadow-lg border-4 border-white" alt="Team" />
                 </div>
               </div>
               {/* Abstract element */}
@@ -396,12 +409,19 @@ export default function Home() {
         <div className="container">
           <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-20 mb-24">
             <div className="space-y-8">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center font-black text-white text-2xl">C</div>
-                <h4 className="font-black text-white text-3xl tracking-tighter">CLMA</h4>
+              <div className="flex items-center gap-4">
+                <img
+                  src="/images/clma-logo.jpg"
+                  alt="CLMA Logo"
+                  className="w-14 h-14 object-cover rounded-xl border border-white/10"
+                />
+                <div>
+                  <h4 className="font-black text-white text-2xl tracking-tighter">CLMA</h4>
+                  <p className="text-[10px] text-slate-400 font-bold tracking-widest uppercase">Construção Ltda</p>
+                </div>
               </div>
-              <p className="text-base leading-relaxed">
-                Excelência construtiva em solo angolano. Edificando o amanhã com compromisso e solidez.
+              <p className="text-base leading-relaxed text-slate-400">
+                Excelência construtiva em solo angolano. Edificando o amanhã com compromisso, rigor e solidez técnica.
               </p>
             </div>
 
@@ -411,7 +431,7 @@ export default function Home() {
                 <li><a href="#servicos" className="hover:text-secondary transition-colors uppercase">Serviços</a></li>
                 <li><a href="#sobre" className="hover:text-secondary transition-colors uppercase">Empresa</a></li>
                 <li><a href="#projetos" className="hover:text-secondary transition-colors uppercase">Projetos</a></li>
-                <li><a href="#contato" className="hover:text-secondary transition-colors uppercase">Contato</a></li>
+                <li><a href="#contato" className="hover:text-secondary transition-colors uppercase">Contacto</a></li>
               </ul>
             </div>
 
@@ -419,16 +439,22 @@ export default function Home() {
               <h5 className="font-black text-white tracking-widest uppercase text-sm">Contato</h5>
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
-                  <MapPin className="text-secondary w-5 h-5 flex-shrink-0" />
-                  <span className="text-sm">Luanda, Angola</span>
+                  <Phone className="text-secondary w-5 h-5 flex-shrink-0" />
+                  <div className="flex flex-col">
+                    <span className="text-[10px] uppercase font-bold opacity-50">Chamada</span>
+                    <span className="text-sm font-bold text-white">{phoneContact}</span>
+                  </div>
                 </div>
                 <div className="flex items-center gap-4">
                   <Phone className="text-secondary w-5 h-5 flex-shrink-0" />
-                  <span className="text-sm font-bold text-white">{whatsappNumber}</span>
+                  <div className="flex flex-col">
+                    <span className="text-[10px] uppercase font-bold opacity-50">WhatsApp</span>
+                    <span className="text-sm font-bold text-white">{whatsappNumber}</span>
+                  </div>
                 </div>
                 <div className="flex items-center gap-4">
                   <Clock className="text-secondary w-5 h-5 flex-shrink-0" />
-                  <span className="text-sm">Seg - Sex, 8h as 18h</span>
+                  <span className="text-sm">Seg - Sab, 8h as 18h</span>
                 </div>
               </div>
             </div>
