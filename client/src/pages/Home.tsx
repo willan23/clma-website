@@ -116,16 +116,12 @@ export default function Home() {
 
           <div className="hidden md:block relative group">
             <div className="absolute -inset-6 bg-secondary/10 rounded-[3rem] blur-3xl animate-pulse"></div>
-            <div className="relative overflow-hidden rounded-[2.5rem] shadow-2xl border border-white/10 group-hover:translate-y-[-10px] transition-transform duration-500">
+            <div className="relative overflow-hidden rounded-[2.5rem] shadow-2xl border border-white/10 group-hover:translate-y-[-10px] transition-transform duration-500 bg-[#F5F5F5] flex items-center justify-center">
               <img
-                src="/images/clma-ess.jpg"
-                alt="CLMA Projeto Real"
-                className="w-full h-[550px] object-cover scale-105 group-hover:scale-100 transition-transform duration-700"
+                src="/images/clma-logo.jpg"
+                alt="CLMA Logo Principal"
+                className="w-full h-[550px] object-contain p-12 scale-105 group-hover:scale-100 transition-transform duration-700"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-primary/90 to-transparent p-10">
-                <p className="text-sm font-bold uppercase tracking-widest text-secondary mb-2">Obra em Destaque</p>
-                <h3 className="text-2xl font-bold">Montagem & Acabamentos Técnicos</h3>
-              </div>
             </div>
           </div>
         </div>
