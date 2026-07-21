@@ -16,7 +16,7 @@ export default function Home() {
   const whatsappNumber = "+244 938 667 695";
 
   return (
-    <div className="min-h-screen bg-[#08121E] text-white selection:bg-amber-400/30 selection:text-amber-400">
+    <div className="min-h-screen bg-[#F8FAFC] text-[#0D2847] selection:bg-blue-500/20 selection:text-[#3D7EB3]">
       {/* Sticky Header Navigation */}
       <Navbar />
 
@@ -47,8 +47,8 @@ export default function Home() {
       {/* Floating Quick Action Widget */}
       <FloatingActions />
 
-      {/* Premium Footer */}
-      <footer className="bg-[#040C16] text-slate-400 py-20 border-t border-white/10 relative overflow-hidden">
+      {/* Premium Executive Footer */}
+      <footer className="bg-[#0B192C] text-slate-300 py-20 border-t border-slate-800 relative overflow-hidden">
         <div className="container relative z-10">
           <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-12 mb-16">
             {/* Brand Col */}
@@ -57,7 +57,7 @@ export default function Home() {
                 <img
                   src="/images/clma-logo.jpg"
                   alt="CLMA Logo"
-                  className="h-12 w-auto rounded-xl border border-white/20 object-cover shadow-lg"
+                  className="h-12 w-auto rounded-xl border border-white/20 object-contain bg-white p-1 shadow-lg"
                 />
                 <div>
                   <h4 className="font-black text-white text-2xl tracking-tighter">CLMA</h4>
@@ -95,21 +95,21 @@ export default function Home() {
                 <div className="flex items-center gap-3">
                   <Phone className="text-amber-400 w-4 h-4 flex-shrink-0" />
                   <div>
-                    <p className="text-[10px] uppercase font-bold text-slate-300">Linha Principal</p>
+                    <p className="text-[10px] uppercase font-bold text-slate-400">Linha Principal</p>
                     <p className="font-bold text-white font-mono">{phoneContact}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone className="text-amber-400 w-4 h-4 flex-shrink-0" />
                   <div>
-                    <p className="text-[10px] uppercase font-bold text-slate-300">WhatsApp Comercial</p>
+                    <p className="text-[10px] uppercase font-bold text-slate-400">WhatsApp Comercial</p>
                     <p className="font-bold text-white font-mono">{whatsappNumber}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <Clock className="text-amber-400 w-4 h-4 flex-shrink-0" />
                   <div>
-                    <p className="text-[10px] uppercase font-bold text-slate-300">Horário</p>
+                    <p className="text-[10px] uppercase font-bold text-slate-400">Horário</p>
                     <p className="text-white">Segunda a Sábado, 8h às 18h</p>
                   </div>
                 </div>
@@ -124,7 +124,7 @@ export default function Home() {
                 <input
                   type="email"
                   placeholder="Seu e-mail"
-                  className="bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-xs w-full focus:outline-none focus:border-amber-400 transition-colors text-white"
+                  className="bg-white/10 border border-white/20 rounded-xl px-4 py-2.5 text-xs w-full focus:outline-none focus:border-amber-400 transition-colors text-white"
                 />
                 <button
                   type="submit"
@@ -136,7 +136,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] font-bold text-slate-300 gap-4">
+          <div className="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] font-bold text-slate-400 gap-4">
             <p>&copy; {new Date().getFullYear()} CLMA Construção Limitada • Todos os direitos reservados.</p>
             <p className="uppercase tracking-widest text-amber-400">Rigor • Inovação • Excelência</p>
           </div>

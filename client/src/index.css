@@ -46,40 +46,40 @@
 }
 
 :root {
-  /* CLMA Design System - Modernismo Industrial de Luxo */
-  --primary: #0B192C;
+  /* CLMA Design System - Modernismo Industrial de Luxo (Light Executive) */
+  --primary: #0D2847;
   --primary-foreground: #FFFFFF;
-  --sidebar-primary: #0B192C;
+  --sidebar-primary: #0D2847;
   --sidebar-primary-foreground: #FFFFFF;
   --chart-1: #1E4D7B;
-  --chart-2: #0B192C;
-  --chart-3: #0F2C59;
-  --chart-4: #051329;
-  --chart-5: #38BDF8;
+  --chart-2: #0D2847;
+  --chart-3: #3D7EB3;
+  --chart-4: #0A1E35;
+  --chart-5: #2563EB;
   --radius: 1rem;
-  --background: #08121E;
-  --foreground: #F8FAFC;
-  --card: #0F2338;
-  --card-foreground: #F8FAFC;
-  --popover: #0F2338;
-  --popover-foreground: #F8FAFC;
-  --secondary: #F59E0B; /* Vibrant Gold/Amber Accent */
-  --secondary-foreground: #0B192C;
-  --muted: #1E293B;
-  --muted-foreground: #94A3B8;
-  --accent: #38BDF8; /* Azure Light Blue */
-  --accent-foreground: #0B192C;
+  --background: #F8FAFC;
+  --foreground: #0D2847;
+  --card: #FFFFFF;
+  --card-foreground: #0D2847;
+  --popover: #FFFFFF;
+  --popover-foreground: #0D2847;
+  --secondary: #F59E0B; /* Warm Amber Accent */
+  --secondary-foreground: #FFFFFF;
+  --muted: #F1F5F9;
+  --muted-foreground: #64748B;
+  --accent: #2563EB; /* Azure Royal Blue */
+  --accent-foreground: #FFFFFF;
   --destructive: #EF4444;
   --destructive-foreground: #FFFFFF;
-  --border: rgba(255, 255, 255, 0.1);
-  --input: rgba(255, 255, 255, 0.08);
-  --ring: #F59E0B;
-  --sidebar: #0B192C;
-  --sidebar-foreground: #F8FAFC;
-  --sidebar-accent: #1E293B;
-  --sidebar-accent-foreground: #F8FAFC;
-  --sidebar-border: rgba(255, 255, 255, 0.1);
-  --sidebar-ring: #F59E0B;
+  --border: #E2E8F0;
+  --input: #F1F5F9;
+  --ring: #3D7EB3;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #0D2847;
+  --sidebar-accent: #F1F5F9;
+  --sidebar-accent-foreground: #0D2847;
+  --sidebar-border: #E2E8F0;
+  --sidebar-ring: #3D7EB3;
 }
 
 .light-theme {
@@ -152,13 +152,13 @@
     padding-right: 1.25rem;
   }
 
-  /* Premium Glassmorphism */
+  /* Premium Light Glassmorphism */
   .glass-card {
-    background: rgba(15, 35, 56, 0.65);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 0 10px 30px rgba(13, 40, 71, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
   }
 
   .glass-card-hover {
@@ -166,16 +166,16 @@
   }
   .glass-card-hover:hover {
     transform: translateY(-6px);
-    background: rgba(22, 48, 77, 0.85);
-    border-color: rgba(245, 158, 11, 0.4);
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(245, 158, 11, 0.15);
+    background: rgba(255, 255, 255, 0.98);
+    border-color: rgba(61, 126, 179, 0.4);
+    box-shadow: 0 20px 40px rgba(13, 40, 71, 0.12), 0 0 25px rgba(245, 158, 11, 0.15);
   }
 
   .glass-nav {
-    background: rgba(8, 18, 30, 0.85);
+    background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.9);
   }
 
   /* Ambient Glow Effects */

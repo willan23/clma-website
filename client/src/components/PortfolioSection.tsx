@@ -114,19 +114,19 @@ export function PortfolioSection() {
     : projects.filter((p) => p.category === selectedFilter);
 
   return (
-    <section id="projetos" className="py-28 relative overflow-hidden bg-[#08121E]">
+    <section id="projetos" className="py-28 relative overflow-hidden bg-[#F8FAFC]">
       <div className="container relative z-10">
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-8">
           <div className="max-w-2xl space-y-4">
-            <div className="inline-flex items-center gap-2 glass-card px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest text-amber-400 border border-amber-400/30">
-              <Filter className="w-3.5 h-3.5 text-amber-400" />
+            <div className="inline-flex items-center gap-2 bg-white shadow-sm px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest text-[#0D2847] border border-slate-200">
+              <Filter className="w-3.5 h-3.5 text-[#3D7EB3]" />
               Galeria de Obras Executadas
             </div>
-            <h2 className="text-4xl sm:text-6xl font-black text-white tracking-tight">
-              Portfólio de <span className="text-amber-400">Projetos</span>
+            <h2 className="text-4xl sm:text-6xl font-black text-[#0D2847] tracking-tight">
+              Portfólio de <span className="text-[#3D7EB3]">Projetos</span>
             </h2>
-            <p className="text-slate-300 text-base sm:text-lg">
+            <p className="text-slate-600 text-base sm:text-lg">
               Transformando visões em realidade física com rigor técnico, pontualidade e acabamentos que impressionam à primeira vista.
             </p>
           </div>
@@ -134,14 +134,14 @@ export function PortfolioSection() {
           {/* Full Gallery Dialog Launcher */}
           <Dialog>
             <DialogTrigger asChild>
-              <button className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 px-8 py-4 rounded-2xl font-black text-xs uppercase tracking-wider flex items-center gap-3 shadow-xl shadow-amber-500/20 transition-all hover:scale-105 active:scale-95">
+              <button className="bg-gradient-to-r from-[#0D2847] to-[#3D7EB3] hover:from-[#08182B] hover:to-[#0D2847] text-white px-8 py-4 rounded-2xl font-black text-xs uppercase tracking-wider flex items-center gap-3 shadow-lg transition-all hover:scale-105 active:scale-95">
                 <span>VER GALERIA COMPLETA (15+ OBRAS)</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 text-amber-400" />
               </button>
             </DialogTrigger>
-            <DialogContent className="max-w-6xl h-[85vh] overflow-y-auto bg-[#08121E]/95 border-amber-400/30 text-white rounded-3xl p-6 sm:p-10 backdrop-blur-2xl">
+            <DialogContent className="max-w-6xl h-[85vh] overflow-y-auto bg-white border-slate-200 text-[#0D2847] rounded-3xl p-6 sm:p-10 shadow-2xl">
               <DialogHeader>
-                <DialogTitle className="text-3xl font-black text-amber-400 mb-6">
+                <DialogTitle className="text-3xl font-black text-[#0D2847] mb-6">
                   Acervo de Obras Concluídas CLMA
                 </DialogTitle>
               </DialogHeader>
@@ -152,14 +152,14 @@ export function PortfolioSection() {
                   "clma-edddd.jpg", "clma-desse.jpg", "clma-ase.jpg", "clma-asse.jpg",
                   "new-project-1.jpg", "new-project-2.jpg", "project-3.jpg"
                 ].map((img, idx) => (
-                  <div key={idx} className="group relative aspect-video rounded-2xl overflow-hidden glass-card border border-white/10 shadow-lg">
+                  <div key={idx} className="group relative aspect-video rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 shadow-md">
                     <img
                       src={`/images/${img}`}
                       alt={`Obra CLMA ${idx + 1}`}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                      <span className="text-xs font-black text-amber-400 bg-black/60 px-4 py-2 rounded-full border border-amber-400/40">
+                    <div className="absolute inset-0 bg-[#0D2847]/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <span className="text-xs font-black text-white bg-[#0D2847]/80 px-4 py-2 rounded-full border border-white/20">
                         CLMA Obra #{idx + 1}
                       </span>
                     </div>
@@ -171,15 +171,15 @@ export function PortfolioSection() {
         </div>
 
         {/* Category Filter Tabs */}
-        <div className="flex flex-wrap gap-3 mb-12 border-b border-white/10 pb-6">
+        <div className="flex flex-wrap gap-3 mb-12 border-b border-slate-200 pb-6">
           {filterTabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setSelectedFilter(tab.id)}
               className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all ${
                 selectedFilter === tab.id
-                  ? "bg-amber-400 text-slate-950 font-black shadow-lg shadow-amber-400/20 scale-105"
-                  : "glass-card text-slate-300 hover:text-white hover:bg-white/10"
+                  ? "bg-[#0D2847] text-white font-black shadow-md scale-105"
+                  : "bg-white text-slate-700 hover:text-[#0D2847] border border-slate-200 hover:bg-slate-50"
               }`}
             >
               {tab.label}
@@ -198,7 +198,7 @@ export function PortfolioSection() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4 }}
-                className="group glass-card glass-card-hover rounded-[2.5rem] overflow-hidden border border-white/10 flex flex-col h-[480px] relative cursor-pointer"
+                className="group bg-white rounded-[2.5rem] overflow-hidden border border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col h-[480px] relative cursor-pointer"
                 onClick={() => setSelectedImage(proj)}
               >
                 {/* Background Image Container */}
@@ -209,30 +209,30 @@ export function PortfolioSection() {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#08121E] via-[#08121E]/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0D2847] via-[#0D2847]/40 to-transparent opacity-90 group-hover:opacity-95 transition-opacity" />
 
                   {/* Top Tag */}
                   <div className="absolute top-6 left-6 z-10">
-                    <span className="text-[10px] font-black uppercase tracking-widest text-amber-400 bg-[#08121E]/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-amber-400/30">
+                    <span className="text-[10px] font-black uppercase tracking-widest text-[#0D2847] bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-slate-200 shadow-sm">
                       {proj.tag}
                     </span>
                   </div>
 
                   {/* Expand Icon */}
-                  <div className="absolute top-6 right-6 z-10 w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity border border-white/20">
-                    <Maximize2 className="w-4 h-4 text-amber-400" />
+                  <div className="absolute top-6 right-6 z-10 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity border border-white/30">
+                    <Maximize2 className="w-4 h-4 text-white" />
                   </div>
 
                   {/* Bottom Information */}
                   <div className="absolute bottom-0 left-0 right-0 p-8 space-y-3 z-10">
-                    <div className="flex items-center gap-2 text-xs font-bold text-sky-400">
+                    <div className="flex items-center gap-2 text-xs font-bold text-amber-400">
                       <MapPin className="w-3.5 h-3.5" />
                       <span>{proj.city}</span>
                     </div>
-                    <h3 className="text-2xl font-black text-white leading-tight group-hover:text-amber-400 transition-colors">
+                    <h3 className="text-2xl font-black text-white leading-tight group-hover:text-amber-300 transition-colors">
                       {proj.title}
                     </h3>
-                    <p className="text-xs text-slate-300 line-clamp-2 leading-relaxed font-normal">
+                    <p className="text-xs text-slate-200 line-clamp-2 leading-relaxed font-normal">
                       {proj.desc}
                     </p>
                   </div>
@@ -249,24 +249,24 @@ export function PortfolioSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-50 bg-black/90 backdrop-blur-xl flex items-center justify-center p-4 sm:p-8"
+              className="fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-xl flex items-center justify-center p-4 sm:p-8"
               onClick={() => setSelectedImage(null)}
             >
               <motion.div
                 initial={{ scale: 0.9 }}
                 animate={{ scale: 1 }}
                 exit={{ scale: 0.9 }}
-                className="relative max-w-4xl w-full glass-card p-6 sm:p-8 rounded-[2.5rem] border border-amber-400/40 text-white space-y-6"
+                className="relative max-w-4xl w-full bg-white p-6 sm:p-8 rounded-[2.5rem] border border-slate-200 text-[#0D2847] space-y-6 shadow-2xl"
                 onClick={(e) => e.stopPropagation()}
               >
                 <button
                   onClick={() => setSelectedImage(null)}
-                  className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-amber-400 hover:text-slate-950 transition-colors"
+                  className="absolute top-6 right-6 w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-[#0D2847] hover:bg-[#0D2847] hover:text-white transition-colors"
                 >
                   <X className="w-5 h-5" />
                 </button>
 
-                <div className="relative aspect-video rounded-2xl overflow-hidden border border-white/10">
+                <div className="relative aspect-video rounded-2xl overflow-hidden border border-slate-200 shadow-md">
                   <img
                     src={`/images/${selectedImage.img}`}
                     alt={selectedImage.title}
@@ -276,16 +276,16 @@ export function PortfolioSection() {
 
                 <div className="space-y-2">
                   <div className="flex items-center gap-3">
-                    <span className="text-xs font-black uppercase text-amber-400 bg-amber-500/20 px-3 py-1 rounded-full border border-amber-500/30">
+                    <span className="text-xs font-black uppercase text-[#3D7EB3] bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
                       {selectedImage.tag}
                     </span>
-                    <span className="text-xs font-bold text-sky-400 flex items-center gap-1">
-                      <MapPin className="w-3.5 h-3.5" />
+                    <span className="text-xs font-bold text-slate-500 flex items-center gap-1">
+                      <MapPin className="w-3.5 h-3.5 text-[#3D7EB3]" />
                       {selectedImage.city}
                     </span>
                   </div>
-                  <h3 className="text-2xl font-black text-white">{selectedImage.title}</h3>
-                  <p className="text-sm text-slate-300">{selectedImage.desc}</p>
+                  <h3 className="text-2xl font-black text-[#0D2847]">{selectedImage.title}</h3>
+                  <p className="text-sm text-slate-600">{selectedImage.desc}</p>
                 </div>
               </motion.div>
             </motion.div>
