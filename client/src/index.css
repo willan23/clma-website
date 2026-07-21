@@ -46,102 +46,88 @@
 }
 
 :root {
-  /* CLMA Design System - Identidade Visual Atualizada */
-  /* Do Logotipo: Navy (#0D2847) e Light Blue (#3D7EB3) */
-
-  --primary: #0D2847;
+  /* CLMA Design System - Modernismo Industrial de Luxo */
+  --primary: #0B192C;
   --primary-foreground: #FFFFFF;
-  --sidebar-primary: #0D2847;
+  --sidebar-primary: #0B192C;
   --sidebar-primary-foreground: #FFFFFF;
-  --chart-1: #3D7EB3;
-  --chart-2: #0D2847;
-  --chart-3: #1E4D7B;
-  --chart-4: #0A1E35;
-  --chart-5: #5DA9E9;
-  --radius: 0.75rem;
-  --background: #F8FAFC;
-  --foreground: #0D2847;
-  --card: #FFFFFF;
-  --card-foreground: #0D2847;
-  --popover: #FFFFFF;
-  --popover-foreground: #0D2847;
-  --secondary: #3D7EB3;
-  --secondary-foreground: #FFFFFF;
-  --muted: #F1F5F9;
-  --muted-foreground: #64748B;
-  --accent: #3D7EB3;
-  --accent-foreground: #FFFFFF;
+  --chart-1: #1E4D7B;
+  --chart-2: #0B192C;
+  --chart-3: #0F2C59;
+  --chart-4: #051329;
+  --chart-5: #38BDF8;
+  --radius: 1rem;
+  --background: #08121E;
+  --foreground: #F8FAFC;
+  --card: #0F2338;
+  --card-foreground: #F8FAFC;
+  --popover: #0F2338;
+  --popover-foreground: #F8FAFC;
+  --secondary: #F59E0B; /* Vibrant Gold/Amber Accent */
+  --secondary-foreground: #0B192C;
+  --muted: #1E293B;
+  --muted-foreground: #94A3B8;
+  --accent: #38BDF8; /* Azure Light Blue */
+  --accent-foreground: #0B192C;
   --destructive: #EF4444;
   --destructive-foreground: #FFFFFF;
-  --border: #E2E8F0;
-  --input: #F1F5F9;
-  --ring: #3D7EB3;
-  --sidebar: #FFFFFF;
-  --sidebar-foreground: #0D2847;
-  --sidebar-accent: #F1F5F9;
-  --sidebar-accent-foreground: #0D2847;
-  --sidebar-border: #E2E8F0;
-  --sidebar-ring: #3D7EB3;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: #F59E0B;
+  --sidebar: #0B192C;
+  --sidebar-foreground: #F8FAFC;
+  --sidebar-accent: #1E293B;
+  --sidebar-accent-foreground: #F8FAFC;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: #F59E0B;
 }
 
-.dark {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground: oklch(0.92 0.005 65);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.488 0.243 264.376);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
+.light-theme {
+  --background: #F8FAFC;
+  --foreground: #0B192C;
+  --card: #FFFFFF;
+  --card-foreground: #0B192C;
+  --muted: #F1F5F9;
+  --muted-foreground: #64748B;
+  --border: #E2E8F0;
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground selection:bg-secondary/30 selection:text-secondary;
     font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.02em;
   }
 
   .font-mono {
     font-family: 'IBM Plex Mono', monospace;
+  }
+
+  /* Custom Sleek Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #08121E;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1E3A5F;
+    border-radius: 5px;
+    border: 2px solid #08121E;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #F59E0B;
   }
 
   button:not(:disabled),
@@ -158,66 +144,78 @@
 }
 
 @layer components {
-
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   * CLMA Design System - Modernismo Industrial Elegante
-   */
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 
-  /* Divisor diagonal - Signature Element */
-  .diagonal-divider {
-    position: relative;
-    overflow: hidden;
+  /* Premium Glassmorphism */
+  .glass-card {
+    background: rgba(15, 35, 56, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
-  .diagonal-divider::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    right: 0;
-    height: 100px;
-    background: inherit;
-    clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 100%);
+  .glass-card-hover {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .glass-card-hover:hover {
+    transform: translateY(-6px);
+    background: rgba(22, 48, 77, 0.85);
+    border-color: rgba(245, 158, 11, 0.4);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(245, 158, 11, 0.15);
   }
 
-  /* Bloco de cor sólida - Signature Element */
-  .color-block {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--chart-3) 100%);
-    color: white;
-    padding: 3rem 2rem;
-    border-radius: var(--radius);
-    box-shadow: 0 4px 20px rgba(13, 40, 71, 0.15);
+  .glass-nav {
+    background: rgba(8, 18, 30, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
-  /* Hover effect para botões */
-  button,
-  [role="button"] {
-    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* Ambient Glow Effects */
+  .glow-amber {
+    box-shadow: 0 0 40px rgba(245, 158, 11, 0.25);
+  }
+  .glow-cyan {
+    box-shadow: 0 0 40px rgba(56, 189, 248, 0.25);
   }
 
-  button:hover:not(:disabled),
-  [role="button"]:hover:not([aria-disabled="true"]) {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0, 51, 102, 0.2);
+  /* Shimmer Animation */
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  .animate-shimmer {
+    animation: shimmer 2.5s infinite;
   }
 
-  .flex {
-    min-height: 0;
-    min-width: 0;
+  /* Pulse Glow Animation */
+  @keyframes pulseGlow {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.05); }
+  }
+  .animate-pulse-glow {
+    animation: pulseGlow 4s ease-in-out infinite;
+  }
+
+  /* Floating Animation */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+  }
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
   }
 
   @media (min-width: 640px) {
     .container {
       padding-left: 1.5rem;
-      /* 24px - tablet padding */
       padding-right: 1.5rem;
     }
   }
@@ -225,10 +223,8 @@
   @media (min-width: 1024px) {
     .container {
       padding-left: 2rem;
-      /* 32px - desktop padding */
       padding-right: 2rem;
       max-width: 1280px;
-      /* Standard content width */
     }
   }
 }
